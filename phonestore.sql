@@ -1,4 +1,4 @@
-ALTER USER 'root'@'localhost' IDENTIFIED BY '123456';
+
 
 drop database if exists phonestore;
 create database phonestore;
@@ -164,13 +164,22 @@ FOREIGN KEY(rom_size_id) REFERENCES romsizes(rom_size_id),
 UNIQUE key pd_unique1(phone_id, color_id, rom_size_id)
 )engine = InnoDB;
 
-DELIMITER $$
+CREATE FUNCTION echo(
+    CREATE TRIGGER after_update_on_phonedetails AFTER UPDATE ON phonedetails
+FOR EACH ROW
+BEGIN
+IF(new.quantity<0) THEN SIGNAL SQLSTATE '02315' SET message_text = 'Quantity cant be negative';
+END IF;
+END
+)
+DELIMITER |
 CREATE TRIGGER after_update_on_phonedetails AFTER UPDATE ON phonedetails
 FOR EACH ROW
 BEGIN
 IF(new.quantity<0) THEN SIGNAL SQLSTATE '02315' SET message_text = 'Quantity cant be negative';
 END IF;
-END$$
+END
+|
 DELIMITER ;
 
 INSERT INTO phonedetails(phone_id, color_id,rom_size_id, phone_status_type, price) VALUE('1', '1','1', '0', '500000');
@@ -203,12 +212,13 @@ phone_detail_id INT NOT NULL,
 status INT DEFAULT '0',
 FOREIGN KEY(phone_detail_id) REFERENCES phonedetails(phone_detail_id)
 )engine = InnoDB;
-DELIMITER $$
+DELIMITER |
 CREATE TRIGGER after_insert_on_imeis AFTER INSERT ON imeis
 FOR EACH ROW
 BEGIN
 UPDATE phonedetails SET quantity = quantity+1 WHERE phone_detail_id = new.phone_detail_id;
-END$$
+END 
+|
 DELIMITER ;
 INSERT INTO imeis(phone_imei, phone_detail_id) VALUE('388541254259874', '1');
 INSERT INTO imeis(phone_imei, phone_detail_id) VALUE('388541254259875', '1');
@@ -278,21 +288,24 @@ FOREIGN KEY (order_id) REFERENCES orders(order_id),
 FOREIGN KEY (phone_imei) REFERENCES imeis(phone_imei)
 )engine = InnoDB;
 
+ALTER USER 'root'@'localhost' IDENTIFIED BY '123456';
 
-DELIMITER $$
+DELIMITER |
 CREATE TRIGGER after_insert_on_orderdetails AFTER INSERT ON OrderDetails
 FOR EACH ROW
 BEGIN
 UPDATE Imeis SET status = '1' WHERE phone_imei = new.phone_imei;
-END$$
+END
+|
 DELIMITER ;
 
-DELIMITER $$
+DELIMITER |
 CREATE TRIGGER after_update_on_imeis AFTER UPDATE ON imeis
 FOR EACH ROW
 BEGIN
 UPDATE phonedetails SET quantity = quantity - 1 WHERE phone_detail_id = new.phone_detail_id;
-END$$
+END
+|
 DELIMITER ;
 
 INSERT INTO OrderDetails(order_id, phone_imei) VALUES (1, 378541254259880);

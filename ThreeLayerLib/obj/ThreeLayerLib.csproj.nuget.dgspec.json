@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\anngu\\Desktop\\phonestoreWithMySQL\\ThreeLayerLib\\ThreeLayerLib.csproj": {}
+    "C:\\Users\\KINGCOM\\Desktop\\PhoneStoreConsole\\ThreeLayerLib\\ThreeLayerLib.csproj": {}
   },
   "projects": {
-    "C:\\Users\\anngu\\Desktop\\phonestoreWithMySQL\\ThreeLayerLib\\ThreeLayerLib.csproj": {
+    "C:\\Users\\KINGCOM\\Desktop\\PhoneStoreConsole\\ThreeLayerLib\\ThreeLayerLib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\anngu\\Desktop\\phonestoreWithMySQL\\ThreeLayerLib\\ThreeLayerLib.csproj",
+        "projectUniqueName": "C:\\Users\\KINGCOM\\Desktop\\PhoneStoreConsole\\ThreeLayerLib\\ThreeLayerLib.csproj",
         "projectName": "ThreeLayerLib",
-        "projectPath": "C:\\Users\\anngu\\Desktop\\phonestoreWithMySQL\\ThreeLayerLib\\ThreeLayerLib.csproj",
-        "packagesPath": "C:\\Users\\anngu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\anngu\\Desktop\\phonestoreWithMySQL\\ThreeLayerLib\\obj\\",
+        "projectPath": "C:\\Users\\KINGCOM\\Desktop\\PhoneStoreConsole\\ThreeLayerLib\\ThreeLayerLib.csproj",
+        "packagesPath": "C:\\Users\\KINGCOM\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\KINGCOM\\Desktop\\PhoneStoreConsole\\ThreeLayerLib\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\anngu\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\KINGCOM\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -40,6 +38,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.1.0, )"
+            },
             "MySqlConnector": {
               "target": "Package",
               "version": "[2.2.7, )"
@@ -61,7 +63,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

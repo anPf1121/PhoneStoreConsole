@@ -12,29 +12,56 @@ namespace DAL
         }
         public static MySqlConnection GetConnection()
         {
+
+            string delimiter = "$$"; // Replace with your custom delimiter
             string sqlFilePath = "../phonestore.sql";
-            // Đọc nội dung của tệp .sql vào chuỗi
-            string sqlQuery = File.ReadAllText(sqlFilePath);
             string connectionString = "server=localhost;user id=root;password=123456;port=3306;database=phonestore;IgnoreCommandTransaction=true;";
             try
             {
-                // Kết nối đến cơ sở dữ liệu MySQL
+                string sqlCommands = File.ReadAllText(sqlFilePath);
+                string[] statements = sqlCommands.Split(new[] { delimiter }, StringSplitOptions.RemoveEmptyEntries);
+
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
                     connection.Open();
 
-                    // Thực thi các câu lệnh SQL từ chuỗi đã đọc
-                    using (MySqlCommand command = new MySqlCommand(sqlQuery, connection))
+                    foreach (string statement in statements)
                     {
-                        command.ExecuteNonQuery();
+                        using (MySqlCommand command = new MySqlCommand(statement, connection))
+                        {
+                            command.ExecuteNonQuery();
+                            Console.WriteLine("Statement executed successfully.");
+                        }
                     }
 
-                    Console.WriteLine("Successfully executed the SQL script.");
+                    Console.WriteLine("All statements executed successfully.");
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("An error occurred: " + ex.Message);
+                Console.WriteLine("Error: " + ex.Message);
+            }
+
+            string connectionStringNotHaveDB = "server=localhost;user=root;password=123456;";
+
+            try
+            {
+                string sqlCommands = File.ReadAllText(sqlFilePath);
+
+                using (MySqlConnection connection = new MySqlConnection(connectionStringNotHaveDB))
+                {
+                    connection.Open();
+
+                    using (MySqlCommand command = new MySqlCommand(sqlCommands, connection))
+                    {
+                        command.ExecuteNonQuery();
+                        Console.WriteLine("Database created successfully.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
             }
 
             try

@@ -10,3 +10,15 @@ C:\Users\anngu\Desktop\phonestoreWithMySQL\ThreeLayerLib\obj\Debug\net7.0\ThreeL
 C:\Users\anngu\Desktop\phonestoreWithMySQL\ThreeLayerLib\obj\Debug\net7.0\refint\ThreeLayerLib.dll
 C:\Users\anngu\Desktop\phonestoreWithMySQL\ThreeLayerLib\obj\Debug\net7.0\ThreeLayerLib.pdb
 C:\Users\anngu\Desktop\phonestoreWithMySQL\ThreeLayerLib\obj\Debug\net7.0\ref\ThreeLayerLib.dll
+C:\Users\KINGCOM\Desktop\PhoneStoreConsole\ThreeLayerLib\bin\Debug\net7.0\ThreeLayerLib.deps.json
+C:\Users\KINGCOM\Desktop\PhoneStoreConsole\ThreeLayerLib\bin\Debug\net7.0\ThreeLayerLib.dll
+C:\Users\KINGCOM\Desktop\PhoneStoreConsole\ThreeLayerLib\bin\Debug\net7.0\ThreeLayerLib.pdb
+C:\Users\KINGCOM\Desktop\PhoneStoreConsole\ThreeLayerLib\obj\Debug\net7.0\ThreeLayerLib.csproj.AssemblyReference.cache
+C:\Users\KINGCOM\Desktop\PhoneStoreConsole\ThreeLayerLib\obj\Debug\net7.0\ThreeLayerLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\KINGCOM\Desktop\PhoneStoreConsole\ThreeLayerLib\obj\Debug\net7.0\ThreeLayerLib.AssemblyInfoInputs.cache
+C:\Users\KINGCOM\Desktop\PhoneStoreConsole\ThreeLayerLib\obj\Debug\net7.0\ThreeLayerLib.AssemblyInfo.cs
+C:\Users\KINGCOM\Desktop\PhoneStoreConsole\ThreeLayerLib\obj\Debug\net7.0\ThreeLayerLib.csproj.CoreCompileInputs.cache
+C:\Users\KINGCOM\Desktop\PhoneStoreConsole\ThreeLayerLib\obj\Debug\net7.0\ThreeLayerLib.dll
+C:\Users\KINGCOM\Desktop\PhoneStoreConsole\ThreeLayerLib\obj\Debug\net7.0\refint\ThreeLayerLib.dll
+C:\Users\KINGCOM\Desktop\PhoneStoreConsole\ThreeLayerLib\obj\Debug\net7.0\ThreeLayerLib.pdb
+C:\Users\KINGCOM\Desktop\PhoneStoreConsole\ThreeLayerLib\obj\Debug\net7.0\ref\ThreeLayerLib.dll
